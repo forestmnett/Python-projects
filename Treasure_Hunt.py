@@ -4,7 +4,7 @@ print('''
  _________|________________.=""_;=.______________|_____________________|_______
 |                   |  ,-"_,=""     `"=.|                  |
 |___________________|__"=._o`"-._        `"=.______________|___________________
-          |                `"=._o`"=._      _`"=._                     |
+          |                `"=._o`"=._      _`"=._                     |lef
  _________|_____________________:=._o "=._."_.-="'"=.__________________|_______
 |                   |    __.--" , ; `"=._o." ,-"""-._ ".   |
 |___________________|_._"  ,. .` ` `` ,  `"-._"-._   ". '__|___________________
@@ -30,12 +30,18 @@ print("Your mission is to find the treasure.")
 choice1 = input("Left or Right?")
 choice1 = choice1.lower()
 if choice1 == "left":
-  elif choice2 = input("swim or wait?")
-choice2 = choice2.lower()
-  if choice 2 == "wait":
-    choice3 = input("Which door? Red, Blue, Yellow?")
-    choice3 = choice3.lower()
-    if choice3 == "yellow"
-    print("Congrats you've won!")
+    choice2 = input("Swim or Wait? ")
+    choice2 = choice2.lower()
+    if choice2 == "wait":
+        choice3 = input("Which door do you choose? Blue, Yellow, or Red? ")
+        choice3 = choice3.lower()
+        if choice3 == "yellow":
+            print("Wahoo You Did It.")
+        elif choice3 == "blue":
+            print("Still wrong door but its a nice color.")
+        else:
+            print("Thats the wrong color door bud. Game Over")
+    else:
+        print("You failed swim qual why wouldnt you wait? Game over.")
 else:
-  print("Game over.")
+    print("Fall into hole.")
