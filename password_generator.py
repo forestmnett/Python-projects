@@ -16,7 +16,6 @@ for number in numbers:
     number = random.choices(numbers, k = nr_numbers)
 for symbol in symbols:
     symbol = random.choices(symbol, k = nr_symbols)
-print(symbol)
 password = letter + number + symbol
 password_list = random.shuffle(password)
 final_password = print(''.join(password))
