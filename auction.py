@@ -1,3 +1,5 @@
+#rough auction program MVP for sure. Only sorts by 1st number. Doesnt clear when bid is submitted.
+import operator
 logo = '''
                          ___________
                          \         /
@@ -11,17 +13,31 @@ logo = '''
                        .-------------.
                       /_______________\\
 '''
+print(logo)
 print("Welcome to the silent auction!")
-bidder_list = {}
-
+bidder_list = []
+def find_high_bid(bidder_list):
+    high_bid = 0
+    for bidder in bidder_list:
+        bid_amount = bidder_list[bidder]
+        if bid_amount > high_bid:
+            bid_amount = high_bid
+    print(high_bid)
 def add_bidder(name, bid):
+    new_bidder = {}
     name = input("what is your name?")
     bid = input("What is your bid?")
-    new_bidder = {}
     new_bidder["name"] = name
     new_bidder["bid"] = bid
-    print(new_bidder)
-#    bidder_list.append(new_bidder)
-add_bidder("name","bid")
+    bidder_list.append(new_bidder)
+    i = input("Are there other bidders?")
+    if i == "no":
+        done_bidding = True
+    else:
+        add_bidder("name", "bid")
+done_bidding = False
+if done_bidding == False:
+    add_bidder("name","bid")
+sorted_bidder_list = sorted(bidder_list, key=operator.itemgetter('bid'),reverse=True)
+print(f"Congrats {sorted_bidder_list[0]} you've won!")
 print(bidder_list)
-
