@@ -16,6 +16,8 @@ logo = '''
 print(logo)
 print("Welcome to the silent auction!")
 bidder_list = []
+def clear_screen():
+    print("\033c", end="")
 def find_high_bid(bidder_list):
     high_bid = 0
     for bidder in bidder_list:
@@ -38,6 +40,8 @@ def add_bidder(name, bid):
 done_bidding = False
 if done_bidding == False:
     add_bidder("name","bid")
+    clear_screen()
+ 
 sorted_bidder_list = sorted(bidder_list, key=operator.itemgetter('bid'),reverse=True)
 print(f"Congrats {sorted_bidder_list[0]} you've won!")
 print(bidder_list)
